@@ -13,11 +13,11 @@ gem "rake", ">= 11.1"
 # be loaded after loading the test library.
 gem "mocha", require: false
 
-gem "capybara", "~> 2.15"
+gem "capybara", "~> 2.15", ">= 2.15.1"
 
-gem "rack-cache", "~> 1.2"
-gem "coffee-rails"
-gem "sass-rails"
+gem "rack-cache", "~> 1.7", ">= 1.7.0"
+gem "coffee-rails", ">= 4.2.2"
+gem "sass-rails", ">= 5.0.8"
 gem "turbolinks", "~> 5"
 gem "webmock"
 
@@ -56,9 +56,9 @@ gem "bootsnap", ">= 1.1.0", require: false
 
 # Active Job.
 group :job do
-  gem "resque", require: false
-  gem "resque-scheduler", require: false
-  gem "sidekiq", require: false
+  gem "resque", ">= 1.27.4", require: false
+  gem "resque-scheduler", ">= 4.3.1", require: false
+  gem "sidekiq", ">= 5.0.5", require: false
   gem "sucker_punch", require: false
   gem "delayed_job", require: false
   gem "queue_classic", github: "rafaelfranca/queue_classic", branch: "update-pg", require: false, platforms: :ruby
@@ -83,7 +83,7 @@ group :cable do
 
   gem "websocket-client-simple", github: "matthewd/websocket-client-simple", branch: "close-race", require: false
 
-  gem "blade", require: false, platforms: [:ruby]
+  gem "blade", ">= 0.7.1", require: false, platforms: [:ruby]
   gem "blade-sauce_labs_plugin", require: false, platforms: [:ruby]
   gem "sprockets-export", require: false
 end
