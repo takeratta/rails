@@ -13,11 +13,11 @@ gem "rake", ">= 11.1"
 # be loaded after loading the test library.
 gem "mocha", require: false
 
-gem "capybara", "~> 2.15"
+gem "capybara", "~> 2.15", ">= 2.15.1"
 
 gem "rack-cache", "~> 1.2"
-gem "coffee-rails"
-gem "sass-rails"
+gem "coffee-rails", ">= 4.2.2"
+gem "sass-rails", ">= 5.0.8"
 gem "turbolinks", "~> 5"
 gem "webmock"
 
@@ -41,7 +41,7 @@ gem "rb-inotify", github: "matthewd/rb-inotify", branch: "close-handling", requi
 group :doc do
   gem "sdoc", "~> 1.0"
   gem "redcarpet", "~> 3.2.3", platforms: :ruby
-  gem "w3c_validators"
+  gem "w3c_validators", ">= 1.3.3"
   gem "kindlerb", "~> 1.2.0"
 end
 
@@ -99,7 +99,7 @@ end
 
 group :ujs do
   gem "qunit-selenium"
-  gem "chromedriver-helper"
+  gem "chromedriver-helper", ">= 1.1.0"
 end
 
 # Add your own local bundler stuff.
@@ -118,7 +118,7 @@ group :test do
 end
 
 platforms :ruby, :mswin, :mswin64, :mingw, :x64_mingw do
-  gem "nokogiri", ">= 1.8.1"
+  gem "nokogiri", ">= 1.11.4"
 
   # Needed for compiling the ActionDispatch::Journey parser.
   gem "racc", ">=1.4.6", require: false
