@@ -16,8 +16,8 @@ gem "mocha", require: false
 gem "capybara", "~> 2.15"
 
 gem "rack-cache", "~> 1.2"
-gem "coffee-rails"
-gem "sass-rails"
+gem "coffee-rails", ">= 4.2.2"
+gem "sass-rails", ">= 5.0.8"
 gem "turbolinks", "~> 5"
 gem "webmock"
 
