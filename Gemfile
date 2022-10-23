@@ -13,11 +13,11 @@ gem "rake", ">= 11.1"
 # be loaded after loading the test library.
 gem "mocha", require: false
 
-gem "capybara", "~> 2.15"
+gem "capybara", "~> 2.15", ">= 2.15.1"
 
-gem "rack-cache", "~> 1.2"
+gem "rack-cache", "~> 1.7", ">= 1.7.0"
 gem "coffee-rails"
-gem "sass-rails"
+gem "sass-rails", ">= 5.0.8"
 gem "turbolinks", "~> 5"
 gem "webmock"
 
