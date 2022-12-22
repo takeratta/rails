@@ -17,7 +17,7 @@ gem "capybara", "~> 2.15"
 
 gem "rack-cache", "~> 1.2"
 gem "coffee-rails"
-gem "sass-rails"
+gem "sass-rails", ">= 6.0.0"
 gem "turbolinks", "~> 5"
 gem "webmock"
 
