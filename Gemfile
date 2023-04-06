@@ -7,17 +7,17 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 gemspec
 
 # We need a newish Rake since Active Job sets its test tasks' descriptions.
-gem "rake", ">= 11.1"
+gem "rake", ">= 12.3.3"
 
 # This needs to be with require false to ensure correct loading order, as it has to
 # be loaded after loading the test library.
 gem "mocha", require: false
 
-gem "capybara", "~> 2.15"
+gem "capybara", "~> 2.15", ">= 2.15.1"
 
-gem "rack-cache", "~> 1.2"
+gem "rack-cache", "~> 1.7", ">= 1.7.0"
 gem "coffee-rails"
-gem "sass-rails"
+gem "sass-rails", ">= 6.0.0"
 gem "turbolinks", "~> 5"
 gem "webmock"
 
@@ -31,7 +31,7 @@ gem "bcrypt", "~> 3.1.11", require: false
 gem "uglifier", ">= 1.3.0", require: false
 
 # Explicitly avoid 1.x that doesn't support Ruby 2.4+
-gem "json", ">= 2.0.0"
+gem "json", ">= 2.3.0"
 
 gem "rubocop", ">= 0.47", require: false
 
@@ -39,15 +39,15 @@ gem "rubocop", ">= 0.47", require: false
 gem "rb-inotify", github: "matthewd/rb-inotify", branch: "close-handling", require: false
 
 group :doc do
-  gem "sdoc", "~> 1.0"
-  gem "redcarpet", "~> 3.2.3", platforms: :ruby
+  gem "sdoc", "~> 1.0", ">= 1.0.0"
+  gem "redcarpet", "~> 3.5.1", platforms: :ruby
   gem "w3c_validators"
   gem "kindlerb", "~> 1.2.0"
 end
 
 # Active Support.
-gem "dalli", ">= 2.2.1"
-gem "listen", ">= 3.0.5", "< 3.2", require: false
+gem "dalli", ">= 3.2.3"
+gem "listen", ">= 3.1.5", "< 3.2", require: false
 gem "libxml-ruby", platforms: :ruby
 gem "connection_pool", require: false
 
@@ -58,9 +58,9 @@ gem "bootsnap", ">= 1.1.0", require: false
 group :job do
   gem "resque", require: false
   gem "resque-scheduler", require: false
-  gem "sidekiq", require: false
+  gem "sidekiq", ">= 6.2.1", require: false
   gem "sucker_punch", require: false
-  gem "delayed_job", require: false
+  gem "delayed_job", ">= 4.1.9", require: false
   gem "queue_classic", github: "rafaelfranca/queue_classic", branch: "update-pg", require: false, platforms: :ruby
   gem "sneakers", require: false
   gem "que", require: false
@@ -68,13 +68,13 @@ group :job do
   # TODO: add qu after it support Rails 5.1
   # gem 'qu-rails', github: "bkeepers/qu", branch: "master", require: false
   # gem "qu-redis", require: false
-  gem "delayed_job_active_record", require: false
+  gem "delayed_job_active_record", ">= 4.1.5", require: false
   gem "sequel", require: false
 end
 
 # Action Cable
 group :cable do
-  gem "puma", require: false
+  gem "puma", ">= 4.3.12", require: false
 
   gem "hiredis", require: false
   gem "redis", "~> 4.0", require: false
@@ -91,10 +91,10 @@ end
 # Active Storage
 group :storage do
   gem "aws-sdk-s3", require: false
-  gem "google-cloud-storage", "~> 1.8", require: false
+  gem "google-cloud-storage", "~> 1.9", ">= 1.9.0", require: false
   gem "azure-storage", require: false
 
-  gem "mini_magick"
+  gem "mini_magick", ">= 4.9.4"
 end
 
 group :ujs do
@@ -118,7 +118,7 @@ group :test do
 end
 
 platforms :ruby, :mswin, :mswin64, :mingw, :x64_mingw do
-  gem "nokogiri", ">= 1.8.1"
+  gem "nokogiri", ">= 1.13.9"
 
   # Needed for compiling the ActionDispatch::Journey parser.
   gem "racc", ">=1.4.6", require: false
@@ -134,16 +134,16 @@ end
 
 platforms :jruby do
   if ENV["AR_JDBC"]
-    gem "activerecord-jdbcsqlite3-adapter", github: "jruby/activerecord-jdbc-adapter", branch: "master"
+    gem "activerecord-jdbcsqlite3-adapter", ">= 61.0", github: "jruby/activerecord-jdbc-adapter", branch: "master"
     group :db do
-      gem "activerecord-jdbcmysql-adapter", github: "jruby/activerecord-jdbc-adapter", branch: "master"
-      gem "activerecord-jdbcpostgresql-adapter", github: "jruby/activerecord-jdbc-adapter", branch: "master"
+      gem "activerecord-jdbcmysql-adapter", ">= 61.0", github: "jruby/activerecord-jdbc-adapter", branch: "master"
+      gem "activerecord-jdbcpostgresql-adapter", ">= 61.0", github: "jruby/activerecord-jdbc-adapter", branch: "master"
     end
   else
-    gem "activerecord-jdbcsqlite3-adapter", ">= 1.3.0"
+    gem "activerecord-jdbcsqlite3-adapter", ">= 61.0"
     group :db do
-      gem "activerecord-jdbcmysql-adapter", ">= 1.3.0"
-      gem "activerecord-jdbcpostgresql-adapter", ">= 1.3.0"
+      gem "activerecord-jdbcmysql-adapter", ">= 61.0"
+      gem "activerecord-jdbcpostgresql-adapter", ">= 61.0"
     end
   end
 end
