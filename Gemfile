@@ -16,8 +16,8 @@ gem "mocha", require: false
 gem "capybara", "~> 2.15"
 
 gem "rack-cache", "~> 1.2"
-gem "coffee-rails"
-gem "sass-rails"
+gem "coffee-rails", ">= 5.0.0"
+gem "sass-rails", ">= 5.0.8"
 gem "turbolinks", "~> 5"
 gem "webmock"
 
@@ -60,7 +60,7 @@ group :job do
   gem "resque-scheduler", require: false
   gem "sidekiq", require: false
   gem "sucker_punch", require: false
-  gem "delayed_job", require: false
+  gem "delayed_job", ">= 4.1.9", require: false
   gem "queue_classic", github: "rafaelfranca/queue_classic", branch: "update-pg", require: false, platforms: :ruby
   gem "sneakers", require: false
   gem "que", require: false
@@ -68,7 +68,7 @@ group :job do
   # TODO: add qu after it support Rails 5.1
   # gem 'qu-rails', github: "bkeepers/qu", branch: "master", require: false
   # gem "qu-redis", require: false
-  gem "delayed_job_active_record", require: false
+  gem "delayed_job_active_record", ">= 4.1.5", require: false
   gem "sequel", require: false
 end
 
@@ -83,7 +83,7 @@ group :cable do
 
   gem "websocket-client-simple", github: "matthewd/websocket-client-simple", branch: "close-race", require: false
 
-  gem "blade", require: false, platforms: [:ruby]
+  gem "blade", ">= 0.7.2", require: false, platforms: [:ruby]
   gem "blade-sauce_labs_plugin", require: false, platforms: [:ruby]
   gem "sprockets-export", require: false
 end
@@ -134,16 +134,16 @@ end
 
 platforms :jruby do
   if ENV["AR_JDBC"]
-    gem "activerecord-jdbcsqlite3-adapter", github: "jruby/activerecord-jdbc-adapter", branch: "master"
+    gem "activerecord-jdbcsqlite3-adapter", ">= 61.0", github: "jruby/activerecord-jdbc-adapter", branch: "master"
     group :db do
-      gem "activerecord-jdbcmysql-adapter", github: "jruby/activerecord-jdbc-adapter", branch: "master"
-      gem "activerecord-jdbcpostgresql-adapter", github: "jruby/activerecord-jdbc-adapter", branch: "master"
+      gem "activerecord-jdbcmysql-adapter", ">= 61.0", github: "jruby/activerecord-jdbc-adapter", branch: "master"
+      gem "activerecord-jdbcpostgresql-adapter", ">= 61.0", github: "jruby/activerecord-jdbc-adapter", branch: "master"
     end
   else
-    gem "activerecord-jdbcsqlite3-adapter", ">= 1.3.0"
+    gem "activerecord-jdbcsqlite3-adapter", ">= 61.0"
     group :db do
-      gem "activerecord-jdbcmysql-adapter", ">= 1.3.0"
-      gem "activerecord-jdbcpostgresql-adapter", ">= 1.3.0"
+      gem "activerecord-jdbcmysql-adapter", ">= 61.0"
+      gem "activerecord-jdbcpostgresql-adapter", ">= 61.0"
     end
   end
 end
