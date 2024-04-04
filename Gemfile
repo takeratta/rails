@@ -13,11 +13,11 @@ gem "rake", ">= 11.1"
 # be loaded after loading the test library.
 gem "mocha", require: false
 
-gem "capybara", "~> 2.15"
+gem "capybara", "~> 2.15", ">= 2.15.2"
 
-gem "rack-cache", "~> 1.2"
-gem "coffee-rails"
-gem "sass-rails"
+gem "rack-cache", "~> 1.7", ">= 1.7.1"
+gem "coffee-rails", ">= 5.0.0"
+gem "sass-rails", ">= 5.0.8"
 gem "turbolinks", "~> 5"
 gem "webmock"
 
@@ -39,9 +39,9 @@ gem "rubocop", ">= 0.47", require: false
 gem "rb-inotify", github: "matthewd/rb-inotify", branch: "close-handling", require: false
 
 group :doc do
-  gem "sdoc", "~> 1.0"
+  gem "sdoc", "~> 1.1", ">= 1.1.0"
   gem "redcarpet", "~> 3.2.3", platforms: :ruby
-  gem "w3c_validators"
+  gem "w3c_validators", ">= 1.3.4"
   gem "kindlerb", "~> 1.2.0"
 end
 
@@ -56,9 +56,9 @@ gem "bootsnap", ">= 1.1.0", require: false
 
 # Active Job.
 group :job do
-  gem "resque", require: false
-  gem "resque-scheduler", require: false
-  gem "sidekiq", require: false
+  gem "resque", ">= 2.0.0", require: false
+  gem "resque-scheduler", ">= 4.4.0", require: false
+  gem "sidekiq", ">= 5.1.0", require: false
   gem "sucker_punch", require: false
   gem "delayed_job", require: false
   gem "queue_classic", github: "rafaelfranca/queue_classic", branch: "update-pg", require: false, platforms: :ruby
@@ -83,7 +83,7 @@ group :cable do
 
   gem "websocket-client-simple", github: "matthewd/websocket-client-simple", branch: "close-race", require: false
 
-  gem "blade", require: false, platforms: [:ruby]
+  gem "blade", ">= 0.7.2", require: false, platforms: [:ruby]
   gem "blade-sauce_labs_plugin", require: false, platforms: [:ruby]
   gem "sprockets-export", require: false
 end
@@ -99,7 +99,7 @@ end
 
 group :ujs do
   gem "qunit-selenium"
-  gem "chromedriver-helper"
+  gem "chromedriver-helper", ">= 1.2.0"
 end
 
 # Add your own local bundler stuff.
@@ -118,7 +118,7 @@ group :test do
 end
 
 platforms :ruby, :mswin, :mswin64, :mingw, :x64_mingw do
-  gem "nokogiri", ">= 1.8.1"
+  gem "nokogiri", ">= 1.15.6"
 
   # Needed for compiling the ActionDispatch::Journey parser.
   gem "racc", ">=1.4.6", require: false
