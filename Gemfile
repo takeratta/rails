@@ -17,7 +17,7 @@ gem "capybara", "~> 2.15"
 
 gem "rack-cache", "~> 1.2"
 gem "coffee-rails"
-gem "sass-rails"
+gem "sass-rails", ">= 6.0.0"
 gem "turbolinks", "~> 5"
 gem "webmock"
 
@@ -56,9 +56,9 @@ gem "bootsnap", ">= 1.1.0", require: false
 
 # Active Job.
 group :job do
-  gem "resque", require: false
+  gem "resque", ">= 2.2.1", require: false
   gem "resque-scheduler", require: false
-  gem "sidekiq", require: false
+  gem "sidekiq", ">= 6.1.0", require: false
   gem "sucker_punch", require: false
   gem "delayed_job", require: false
   gem "queue_classic", github: "rafaelfranca/queue_classic", branch: "update-pg", require: false, platforms: :ruby
