@@ -84,14 +84,14 @@ group :cable do
   gem "websocket-client-simple", github: "matthewd/websocket-client-simple", branch: "close-race", require: false
 
   gem "blade", require: false, platforms: [:ruby]
-  gem "blade-sauce_labs_plugin", require: false, platforms: [:ruby]
+  gem "blade-sauce_labs_plugin", ">= 0.7.3", require: false, platforms: [:ruby]
   gem "sprockets-export", require: false
 end
 
 # Active Storage
 group :storage do
   gem "aws-sdk-s3", require: false
-  gem "google-cloud-storage", "~> 1.8", require: false
+  gem "google-cloud-storage", "~> 1.32", ">= 1.32.0", require: false
   gem "azure-storage", require: false
 
   gem "mini_magick"
